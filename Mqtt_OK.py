@@ -8,7 +8,7 @@ def on_connect(client, userdata, flags, rc):
 
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
-    client.subscribe("/feeds/photocell")
+    client.subscribe("Garaage-Temp")
 # The callback for when a PUBLISH message is received from the server.
 
 def on_message(client, userdata, msg):
@@ -17,7 +17,7 @@ def on_message(client, userdata, msg):
 
 client.on_connect = on_connect
 client.on_message = on_message
-client.connect("192.168.1.1", 1883, 60)
+client.connect("192.168.1.3", 1883, 60)
 
 # Blocking call that processes network traffic, dispatches callbacks and
 # handles reconnecting.
