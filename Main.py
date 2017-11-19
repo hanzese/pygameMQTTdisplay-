@@ -33,7 +33,11 @@ while not done:
         print "data tuleb"
         print datavr
         if datavr == "Alused otsas!!":
-            pygame.mixer.music.play()
+            try:
+                pygame.mixer.music.play()
+            except:
+                pass
+
         text = font.render(datavr, True, (0, 128, 0))
         datavr = ""
         for event in pygame.event.get():
