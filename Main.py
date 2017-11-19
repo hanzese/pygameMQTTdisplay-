@@ -16,7 +16,7 @@ pygame.init()
 screen = pygame.display.set_mode((1024, 200))
 clock = pygame.time.Clock()
 try:
-    pygame.mixer.init(44100, -16,2,2048)
+    pygame.mixer.init(44100, -16, 2, 2048)
     pygame.mixer.music.load("thrown.mp3")
 except (pygame.error):
     print"No audio device"
@@ -50,7 +50,7 @@ while not done:
                 break
 
 
-    screen.fill((255,255,255))
+    screen.fill((255, 255, 255))
     screen.blit(text,(160 - text.get_width() // 2, 100 - text.get_height() // 2))
     pygame.display.flip()
     # change_varible()
