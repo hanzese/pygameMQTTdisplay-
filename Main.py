@@ -15,8 +15,9 @@ clock = pygame.time.Clock()
 try:
     pygame.mixer.init(44100, -16,2,2048)
     pygame.mixer.music.load("thrown.mp3")
-except ValueError:
+except (pygame.error):
     print"No audio device"
+    pass
 
 done = False
 
