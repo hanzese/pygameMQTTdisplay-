@@ -23,10 +23,11 @@ while not done:
         print "datat ei tule"
     else:
         print "data tuleb"
-        print output
+        print datavr
         text = font.render(datavr, True, (0, 128, 0))
         datavr = ""
         for event in pygame.event.get():
+            print event
             if event.type == pygame.QUIT:
                 done = True
                 break
