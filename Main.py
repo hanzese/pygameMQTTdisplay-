@@ -17,7 +17,7 @@ pygame.mixer.music.load("thrown.mp3")
 done = False
 
 font = pygame.font.SysFont("comicsansms", 40)
-text = font.render(datavr.encode('utf8'), True, (0, 512, 0))
+text = font.render(datavr.encode('utf8'), True, (0, 128, 0))
 
 while not done:
     output = proc.stdout.readline()
@@ -29,7 +29,7 @@ while not done:
         print datavr
         if datavr == "Alused otsas!!":
             pygame.mixer.music.play()
-        text = font.render(datavr, True, (0, 512, 0))
+        text = font.render(datavr, True, (0, 128, 0))
         datavr = ""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
