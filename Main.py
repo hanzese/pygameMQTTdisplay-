@@ -10,14 +10,14 @@ proc = subprocess.Popen('python Mqtt_OK.py',
                         )
 datavr = "No data"
 pygame.init()
-screen = pygame.display.set_mode((320, 200))
+screen = pygame.display.set_mode((1024, 200))
 clock = pygame.time.Clock()
 pygame.mixer.music.load("thrown.mp3")
 
 done = False
 
 font = pygame.font.SysFont("comicsansms", 40)
-text = font.render(datavr.encode('utf8'), True, (0, 128, 0))
+text = font.render(datavr.encode('utf8'), True, (0, 512, 0))
 
 while not done:
     output = proc.stdout.readline()
@@ -29,7 +29,7 @@ while not done:
         print datavr
         if datavr == "Alused otsas!!":
             pygame.mixer.music.play()
-        text = font.render(datavr, True, (0, 128, 0))
+        text = font.render(datavr, True, (0, 512, 0))
         datavr = ""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
