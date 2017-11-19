@@ -2,12 +2,15 @@ import sys
 import pygame
 import subprocess
 
-
-proc = subprocess.Popen('python Mqtt_OK.py',
+try:
+    proc = subprocess.Popen('python Mqtt_OK.py',
                         shell=True,
                         stdin=subprocess.PIPE,
                         stdout=subprocess.PIPE,
                         )
+except:
+    pass
+
 datavr = "No data"
 pygame.init()
 screen = pygame.display.set_mode((1024, 200))
