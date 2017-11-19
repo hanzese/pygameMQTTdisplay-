@@ -12,8 +12,11 @@ datavr = "No data"
 pygame.init()
 screen = pygame.display.set_mode((1024, 200))
 clock = pygame.time.Clock()
-pygame.mixer.init(44100, -16,2,2048)
-pygame.mixer.music.load("thrown.mp3")
+try:
+    pygame.mixer.init(44100, -16,2,2048)
+    pygame.mixer.music.load("thrown.mp3")
+except ValueError:
+    print"No audio device"
 
 done = False
 
